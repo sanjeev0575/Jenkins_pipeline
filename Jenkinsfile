@@ -1,14 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('github checkout code ') {
             steps {
-                echo 'Building...'
+                sh 'git branch: 'main', credentialsId: 'github', url: 'https://github.com/sanjeev0575/Jenkins_pipeline.git''
             }
         }
-        stage('Test') {
+        stage('maven Test') {
             steps {
-                echo 'Testing...'
+                sh 'mvn clean'
             }
         }
         stage('Deploy') {
