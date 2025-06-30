@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('github checkout code ') {
             steps {
-                sh 'git branch: 'main', credentialsId: 'github', url: 'https://github.com/sanjeev0575/Jenkins_pipeline.git''
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/sanjeev0575/Jenkins_pipeline.git'
             }
         }
         stage('maven Test') {
